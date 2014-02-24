@@ -1,0 +1,91 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+
+	"settings":{
+		"AStyleFormatter":
+        {
+            "debug": false,
+            "autoformat_on_save": true,
+            "options_default":{
+                "style": "kr",
+                "indent": "tab",
+                "indent-classes": false,
+                "indent-switches": true,
+                "indent-cases": true,
+                "indent-namespaces": false,
+                "indent-labels": false,
+                "indent-preprocessor": true,
+                "indent-col1-comments": true,
+                "min-conditional-indent": 2,
+                "max-instatement-indent": 40,
+                "break-blocks": "",
+                "pad-oper": true,
+                "pad-paren": false,
+                "pad-paren-out": false,
+                "pad-first-paren-out": false,
+                "pad-paren-in": false,
+                "pad-header": true,
+                "unpad-paren": false,
+                "delete-empty-lines": false,
+                "fill-empty-lines": false,
+                "align-pointer": "name",
+                "align-reference": "name",
+                "break-closing-brackets": false,
+                "break-elseifs": false,
+                "add-brackets": false,
+                "add-one-line-brackets": false,
+                "keep-one-line-blocks": false,
+                "keep-one-line-statements": true,
+                "convert-tabs": true,
+                "close-templates": false,
+                "max-code-length": 100,
+                "break-after-logical": true,
+                "align-method-colon": false,
+                "pad-method-prefix": false,
+                "unpad-method-prefix": false,
+                "pad-method-colon": "none"
+            }
+        }
+	},
+
+
+	"build_systems":
+    [
+        {
+            "name": "Configure Build",
+            "shell_cmd": "python waf",
+            "working_dir": "${project_path}"
+        },
+        {
+            "name": "Debug Build",
+            "shell_cmd": "python waf build",
+            "working_dir": "${project_path}"
+        },
+        {
+            "name": "Release Build",
+            "shell_cmd": "python waf build --mode=release",
+            "working_dir": "${project_path}"
+        },
+        {
+            "name": "Debug Build (With Docs)",
+            "shell_cmd": "python waf build --BuildDocumentation",
+            "working_dir": "${project_path}"
+        },
+        {
+            "name": "Release Build (With Docs)",
+            "shell_cmd": "python waf build --mode=release --BuildDocumentation",
+            "working_dir": "${project_path}"
+        },
+        {
+            "name": "Clean Build",
+            "shell_cmd": "python waf Clean",
+            "working_dir": "${project_path}"
+        }
+    ]
+}

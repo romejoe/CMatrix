@@ -1,0 +1,488 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"A",
+				"AStack_Empty"
+			],
+			[
+				"ASta",
+				"AStack_Empty"
+			],
+			[
+				"def",
+				"define"
+			],
+			[
+				"AS",
+				"AStack_Push"
+			],
+			[
+				"de",
+				"define"
+			],
+			[
+				"Get",
+				"GetParameterAndAdvance"
+			],
+			[
+				"op",
+				"options"
+			],
+			[
+				"param",
+				"paramCount"
+			],
+			[
+				"GetParam",
+				"getParamData"
+			],
+			[
+				"_",
+				"_variables"
+			],
+			[
+				"l",
+				"lVal"
+			],
+			[
+				"if",
+				"ifStmt"
+			],
+			[
+				"C",
+				"Code_Template"
+			],
+			[
+				"Con",
+				"Construct"
+			],
+			[
+				"re",
+				"recurseDirs"
+			],
+			[
+				"Lon",
+				"LongestPalindrome"
+			],
+			[
+				"u",
+				"tmpUBound"
+			],
+			[
+				"alp",
+				"alphabet"
+			],
+			[
+				"stat",
+				"statesvisited"
+			],
+			[
+				"ep",
+				"epsilonClosures"
+			],
+			[
+				"state",
+				"stateCount"
+			],
+			[
+				"epsion",
+				"epsilonIndex"
+			],
+			[
+				"cu",
+				"currentSet"
+			],
+			[
+				"alph",
+				"alphabetLength"
+			],
+			[
+				"return",
+				"returnFromHere"
+			],
+			[
+				"tmp",
+				"tmpTransition"
+			],
+			[
+				"SFAF",
+				"SFAF_TRANSITIONS"
+			],
+			[
+				"S",
+				"SFAF_TRANSITIONS"
+			],
+			[
+				"read",
+				"readTransitions"
+			],
+			[
+				"tok",
+				"token"
+			],
+			[
+				"TMO",
+				"tmpTransition"
+			],
+			[
+				"E",
+				"ExtractIntFromToken"
+			],
+			[
+				"src",
+				"srcState"
+			],
+			[
+				"TOKEN",
+				"TOKENTYPE_IDENTIFIER"
+			],
+			[
+				"TOK",
+				"TOKENTYPE_OPEN_BRACE"
+			],
+			[
+				"to",
+				"tokens"
+			],
+			[
+				"file",
+				"fileContents"
+			],
+			[
+				"ret",
+				"_ret"
+			],
+			[
+				"SFAF_s",
+				"SFAF_SETTING_COUNT"
+			],
+			[
+				"se",
+				"settingsMap"
+			],
+			[
+				"TO",
+				"TOKENTYPE_OPEN_BRACE"
+			],
+			[
+				"strn",
+				"strncpy"
+			],
+			[
+				"token",
+				"tokens"
+			],
+			[
+				"SFAF_",
+				"SFAF_ALPHABET"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Debug Build",
+	"command_palette":
+	{
+		"height": 347.0,
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package control in",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 442.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Joey/Desktop/School/CS 498/Common/astackTest.c",
+		"/Users/Joey/Desktop/School/CS 498/CS 498.sublime-project",
+		"/Users/Joey/Desktop/School/CS 498/Style.sublime-settings",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/wscript",
+		"/Users/Joey/Desktop/School/CS 498/Interpreter/interpreter.c",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/compiler.c",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/compiler.h",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/LangLexer.l",
+		"/Users/Joey/Desktop/School/CS 498/wscript",
+		"/Users/Joey/Desktop/School/CS 498/Common/wscript",
+		"/Users/Joey/Desktop/School/CS 498/Common/Instruction.c",
+		"/Users/Joey/Desktop/School/CS 498/Common/Instruction.h",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/CompilerMain.c",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/compilerTest.c",
+		"/Users/Joey/Desktop/School/CS 498/Interpreter/wscript",
+		"/Users/Joey/Desktop/School/CS 498/Interpreter/interpreter.h",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/LangParse.c",
+		"/Users/Joey/Desktop/School/CS 498/Compiler/LangParse.y",
+		"/Volumes/Data/home/home/joe/Documents/science fair/url.txt",
+		"/Users/Joey/Desktop/School/MAT 450/Notes.tex",
+		"/Users/Joey/Library/Application Support/Sublime Text 3/Packages/User/waf.sublime-build",
+		"/Users/Joey/Desktop/Desktop/stuff/start.bat",
+		"/Users/Joey/Desktop/Desktop/stuff/New Text Document.txt",
+		"/Users/Joey/Desktop/School/COM 308/Informal 2/Informal2.tex",
+		"/Users/Joey/Desktop/COM 308/Informal 2/wscript",
+		"/Users/Joey/Desktop/COM 308/Informal 2/Informal2.tex",
+		"/Users/Joey/Desktop/COM 308/wscript",
+		"/Users/Joey/Desktop/Desktop/Compiler.txt",
+		"/Users/Joey/Desktop/CS 370/fake it response.txt",
+		"/Volumes/Data/Joey/Desktop/old desktop/sdgwireless.txt",
+		"/Volumes/Data/Joey/Desktop/old desktop/rackspace.txt",
+		"/Volumes/Data/joey-2/Desktop/assignment1.c",
+		"/Volumes/Data/joey-2/sketchbook/photo_resistor/photo_resistor.pde",
+		"/Volumes/Data/bsod/bluescreenview/readme.txt",
+		"/Volumes/Data/thumbdrive lion/sig.txt",
+		"/Users/Joey/Downloads/waf-tests-0.1.0/wscript",
+		"/Users/Joey/Desktop/fake it response",
+		"/Users/Joey/Downloads/assign18.tex",
+		"/Users/Joey/Documents/School/cs-480/Assignment 8/token.h",
+		"/Users/Joey/Documents/School/cs-480/Assignment 8/expression.h",
+		"/Users/Joey/Documents/School/cs-480/Assignment 8/basic.h",
+		"/Users/Joey/Documents/School/cs-480/Assignment 8/expression.c",
+		"/Users/Joey/Documents/School/cs-480/Assignment 8/basic.y",
+		"/Users/Joey/Desktop/Compiler.txt",
+		"/Users/Joey/Desktop/Snippets/Bash/deleteEmptyDirs.sh",
+		"/Users/Joey/Desktop/Visilego/Config/Initialize.sh",
+		"/Users/Joey/Desktop/cs480/Assignment 7/test.basic",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/tiny basic reference.txt",
+		"/Volumes/Data/Joey/Desktop/old desktop/get first int.sql",
+		"/Users/Joey/Desktop/ais tictactoe/backup/tic.h2",
+		"/Users/Joey/Desktop/AIS/rewrite/C/fact_exp/fact_exp.c",
+		"/Users/Joey/Desktop/AIS/java calculator/tmp",
+		"/Users/Joey/Documents/Mathletics/Solutions/wscript",
+		"/Users/Joey/Documents/Mathletics/Solutions/October 2013/wscript",
+		"/Users/Joey/Desktop/visilego tests",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 5/basic.lex",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 5/basic.y",
+		"/Users/Joey/Downloads/cudaminer-2013-11-01/cudaminer-src-2013.11.01/compile",
+		"/Users/Joey/Desktop/projects/newegg/newegg.e4p",
+		"/Users/Joey/Desktop/projects/encdec/test.py",
+		"/Users/Joey/Desktop/projects/encdec/encdec.py",
+		"/Users/Joey/Desktop/School/CS 431/CS 431/fibonacci.hs",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 4/token.h",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 4/calc.lex",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 4/calc.y",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 4/calc.h",
+		"/Users/Joey/Desktop/Chapter6problems.py",
+		"/Volumes/Macintosh HD old/Users/Joey/cuda-workspace/async/src/asyncAPI.cu",
+		"/Volumes/Macintosh HD old/Users/Joey/Desktop/projects/Mini Projects/Pumpkin/Pumpkin.ino",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/src-10-30/calc/token.h",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/src-10-30/calc/calc.y",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/src-10-30/calc/calc.lex",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/src-10-28/cgram.y",
+		"/Users/Joey/Documents/workspace/vehilcetracker/html/index.html",
+		"/Users/Joey/Documents/workspace/vehilcetracker/js/PageSetup.js",
+		"/Users/Joey/Desktop/Visilego/src/edu/sunyit/cs370/vislego/guiPrototype/Controller.java",
+		"/Users/Joey/Desktop/Visilego/src/edu/sunyit/cs370/vislego/guiPrototype/Controller.java-original",
+		"/Users/Joey/Desktop/Visilego/src/edu/sunyit/cs370/vislego/guiPrototype/Controller.java-baseline",
+		"/Users/Joey/Desktop/Visilego/src/edu/sunyit/cs370/vislego/guiPrototype/Controller.java-merge",
+		"/Users/Joey/Desktop/Visilego/SConstruct",
+		"/Users/Joey/Desktop/visilego todo.txt",
+		"/Users/Joey/Downloads/GitHub.wdgt/main.js",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 3/test.basic",
+		"/Users/Joey/Desktop/New Folder With Items/school/cs-480/Assignment 3/basic.lex",
+		"/Users/Joey/Desktop/school/cs-480/src-10-23/cgram.y",
+		"/Users/Joey/Desktop/school/cs-480/src-10-23/cgram.c",
+		"/Users/Joey/Desktop/school/cs370/src-10-23/cgram.y",
+		"/Users/Joey/Desktop/school/cs-480/src-10-23/lempar.c",
+		"/Users/Joey/Documents/Personal Projects/PaycheckRecords-Python/README.md",
+		"/Users/Joey/Desktop/failedtest.nxc",
+		"/Users/Joey/Desktop/Visilego/Example NXC programs/text.nxc",
+		"/Users/Joey/Desktop/Dump.sql",
+		"/Users/Joey/Desktop/CS480/Assignment 2/main.cpp",
+		"/Users/Joey/Desktop/CS480/Assignment 2/lexer.h",
+		"/Users/Joey/Desktop/CS480/Assignment 2/sfaf.h",
+		"/Users/Joey/Desktop/CS480/Assignment 2/lexer.cpp",
+		"/Users/Joey/Desktop/CS480/Assignment 2/sfaf.cpp",
+		"/Users/Joey/Desktop/CS480/Assignment 2/CMakeLists.txt",
+		"/Users/Joey/Desktop/CS480/Assignment 2/tests/sfaf_example.txt",
+		"/Users/Joey/Desktop/CS480/Assignment 2/misc.cpp",
+		"/Users/Joey/Desktop/CS480/Assignment 2/misc.h",
+		"/Users/Joey/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Joey/Desktop/demo.c",
+		"/Users/Joey/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"shell",
+			"With",
+			"parse\\(",
+			"parse",
+			"center",
+			"Config.db",
+			"cout",
+			"relop ::=",
+			"olivegreen",
+			"([\"October 2013\"])",
+			"\"[a-z]*\"\\t",
+			";}",
+			"if(!inBlockComment){ ",
+			"#define ParseARG_PDECL",
+			"void parse",
+			"parse",
+			"tmpTransition.",
+			".",
+			"_tmpTransitions",
+			"_tmpStruct",
+			"strncmp",
+			"LOOPEXIT",
+			"finger"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			";",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "C Byte Stream.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
