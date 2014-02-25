@@ -4,12 +4,12 @@
 #ifndef ___MATRIX_H___
 #define ___MATRIX_H___
 
-#define __DEFAULT_SIZE 30
+#define __DEFAULT_SIZE 32
 
 #define TRIM_WHITESPACE(src) while(isspace(*src)) ++src
 
 #define READ_DOUBLE_MATRIX(mat, src){\
-        int logicalSize = 0, physicalSize = __DEFAULT_SIZE, rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
+        int physicalSize = __DEFAULT_SIZE, rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
         double *tmp = malloc(sizeof(double) * __DEFAULT_SIZE);\
         char *localSrc = src;\
         TRIM_WHITESPACE(localSrc);\
@@ -33,6 +33,7 @@
                 }\
                 else{\
                     while(curRowSize < rowSize){\
+                        if(i == physicalSize) tmp = realloc(tmp, physicalSize << 1);\
                         tmp[i] = 0.0;\
                         ++i;\
                         ++curRowSize;\
@@ -43,6 +44,7 @@
                 ++localSrc;\
                 break;\
             default:\
+                if(i == physicalSize) tmp = realloc(tmp, physicalSize << 1);\
                 tmp[i] = atof(localSrc);\
                 ++i;\
                 ++curRowSize;\
