@@ -9,8 +9,8 @@
 #define TRIM_WHITESPACE(src) while(isspace(*src)) ++src
 
 #define READ_DOUBLE_MATRIX(mat, src){\
-        int physicalSize = __DEFAULT_SIZE, rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
-        double *tmp = malloc(sizeof(double) * __DEFAULT_SIZE);\
+        int physicalSize = __DEFAULT_SIZE * sizeof(double), rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
+        double *tmp = malloc(physicalSize);\
         char *localSrc = src;\
         TRIM_WHITESPACE(localSrc);\
         while(*localSrc){\
@@ -33,7 +33,7 @@
                 }\
                 else{\
                     while(curRowSize < rowSize){\
-                        if(i == physicalSize) tmp = realloc(tmp, physicalSize << 1);\
+                        if(i == physicalSize) {physicalSize = physicalSize<< 1;tmp = realloc(tmp, physicalSize);}\
                         tmp[i] = 0.0;\
                         ++i;\
                         ++curRowSize;\
@@ -43,12 +43,26 @@
                 ++rowCount;\
                 ++localSrc;\
                 break;\
-            default:\
-                if(i == physicalSize) tmp = realloc(tmp, physicalSize << 1);\
+            case '+':\
+            case '-':\
+            case '.':\
+            case '0':\
+            case '1':\
+            case '2':\
+            case '3':\
+            case '4':\
+            case '5':\
+            case '6':\
+            case '7':\
+            case '8':\
+            case '9':\
+                if(i == physicalSize) {physicalSize = physicalSize<< 1;tmp = realloc(tmp, physicalSize);}\
                 tmp[i] = atof(localSrc);\
                 ++i;\
                 ++curRowSize;\
                 while(!isspace(*localSrc) && *localSrc != 0) ++localSrc;\
+                break;\
+            default:\
                 break;\
             }\
         }\
@@ -119,7 +133,7 @@
 #define PRINT_MATRIX(a, format) {\
         int x, y;\
         for(x = 0; x < a->_row; ++x){\
-            for(y = 0; y < a->_col - 1; ++y){\
+            for(y = 0; y < a->_col -1 ; ++y){\
                 printf(format ", ", GET_MATRIX_VAL(a, x, y));\
             }\
             printf(format "\n", GET_MATRIX_VAL(a, x, y));\
