@@ -4,13 +4,13 @@
 #ifndef ___MATRIX_H___
 #define ___MATRIX_H___
 
-#define __DEFAULT_SIZE 100;
+#define __DEFAULT_SIZE 30
 
 #define TRIM_WHITESPACE(src) while(isspace(*src)) ++src
 
 #define READ_DOUBLE_MATRIX(mat, src){\
-        int logicalSize = 0, physicalSize = __DEFAULT_SIZE, rowSize = -1, curRowSize = 0, i = 0, colCount;\
-        double tmp = malloc(sizeof(double) * __DEFAULT_SIZE);\
+        int logicalSize = 0, physicalSize = __DEFAULT_SIZE, rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
+        double *tmp = malloc(sizeof(double) * __DEFAULT_SIZE);\
         char *localSrc = src;\
         TRIM_WHITESPACE(localSrc);\
         while(*localSrc){\
@@ -39,17 +39,20 @@
                     }\
                 }\
                 curRowSize = 0;\
-                ++colCount;\
+                ++rowCount;\
+                ++localSrc;\
                 break;\
             default:\
                 tmp[i] = atof(localSrc);\
+                ++i;\
+                ++curRowSize;\
                 while(!isspace(*localSrc) && *localSrc != 0) ++localSrc;\
                 break;\
             }\
         }\
         mat->_data = tmp;\
-        mat->_row = rowSize;\
-        mat->_col = colCount;\
+        mat->_row = rowCount;\
+        mat->_col = rowSize;\
     }
 
 #define INIT_MATRIX(mat, row, col, type) \
