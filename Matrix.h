@@ -8,6 +8,65 @@
 
 #define TRIM_WHITESPACE(src) while(isspace(*src)) ++src
 
+
+#define READ_MATRIX_FILE(f, mat, type, blank, format, delimiter, linesep){\
+    int rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
+    int size = __DEFAULT_SIZE;\
+    type *buf = malloc(size * sizeof(type));\
+    type tmp;\
+    char dummy_char;\
+    while(!feof(f)){\
+        if( i >= size){\
+            size <<= 1;\
+            buf = realloc(buf, size * sizeof(type));\
+        }\
+        if(fscanf(f, format, &tmp) != 1) break;\
+        printf(format "\n", tmp);\
+        buf[i] = tmp;\
+        ++i;\
+        ++curRowSize;\
+        if(fscanf(f, " %[" delimiter linesep "]", &dummy_char) == 1){\
+            if(dummy_char == delimiter[0]){\
+                dummy_char = 0;\
+            }\
+            else{\
+                if(rowSize == -1){\
+                    if(curRowSize == 0) goto READERRORA;\
+                    rowSize = curRowSize;\
+                }\
+                else if(rowSize < curRowSize) goto READERROR;\
+                else while(curRowSize < rowSize){\
+                    if( i >= size){\
+                        size <<= 1;\
+                        buf = realloc(buf, size * sizeof(type));\
+                    }\
+                    buf[i] = blank;\
+                    ++i;\
+                    ++curRowSize;\
+                    ++tmp;\
+                }\
+                curRowSize = 0;\
+                ++rowCount;\
+            }\
+        }\
+        else{\
+            break;\
+            goto READERROR;\
+        }\
+    }\
+\
+    (mat)->data = buf;\
+    (mat)->row = rowCount;\
+    (mat)->col = rowSize;\
+    goto DONE;\
+    READERRORA:\
+    READERROR:\
+    printf("Error Reading Matrix\n"); exit(-1);\
+    DONE:\
+    i = 0;\
+}
+
+
 #define READ_DOUBLE_MATRIX(mat, src){\
         int physicalSize = __DEFAULT_SIZE * sizeof(double), rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
         double *tmp = malloc(physicalSize);\
@@ -66,23 +125,23 @@
                 break;\
             }\
         }\
-        mat->_data = tmp;\
-        mat->_row = rowCount;\
-        mat->_col = rowSize;\
+        mat->data = tmp;\
+        mat->row = rowCount;\
+        mat->col = rowSize;\
     }
 
 #define INIT_MATRIX(mat, row, col, type) \
     mat = malloc(sizeof(struct matrix)); \
-    mat->_data = malloc(sizeof(type) * row * col); \
-    mat->_row = row; \
-    mat->_col = col
+    mat->data = malloc(sizeof(type) * row * col); \
+    mat->row = row; \
+    mat->col = col
 
 #define INIT_DOUBLE_MATRIX(mat, row, col) \
     INIT_MATRIX(mat, row, col, double)
 
 
-#define GET_MATRIX_ADDR(mat, row, col) \
-    (mat)->_data[(row) * (mat)->_col + (col)]
+#define GET_MATRIX_ADDR(mat, _row, _col) \
+    (mat)->data[(_row) * (mat)->col + (_col)]
 
 #define COPY_MATRIX_XY(src, dst, r1, r2, c1, c2, type){\
         int x, y;\
@@ -93,7 +152,7 @@
     }
 
 #define COMPARE_MATRIX_SIZE(a,b) \
-    ((a->_row == b->_row) && (a->_col == b->_col))
+    ((a->row == b->row) && (a->col == b->col))
 
 #define GET_MATRIX_VAL(mat, row, col)  \
     GET_MATRIX_ADDR(mat, row, col)
@@ -107,8 +166,8 @@
             raise(SIGFPE);\
         }\
         int i, j;\
-        for(i = 0; i < a->_row; ++i){\
-            for(j = 0; j < a->_col; ++j){\
+        for(i = 0; i < a->row; ++i){\
+            for(j = 0; j < a->col; ++j){\
                 GET_MATRIX_ADDR(c, i, j) = \
                                            GET_MATRIX_ADDR(a, i, j) + \
                                            GET_MATRIX_ADDR(b, i, j); \
@@ -117,10 +176,10 @@
 
 #define MUL_MATRICES(a,b,c){\
         int x,y,i;\
-        for(x = 0; x < a->_row; ++x){\
-            for(y = 0; y < b->_col; ++y){\
+        for(x = 0; x < a->row; ++x){\
+            for(y = 0; y < b->col; ++y){\
                 GET_MATRIX_ADDR(c, x, y) = 0.0;\
-                for(i = 0; i < b->_row; ++i){\
+                for(i = 0; i < b->row; ++i){\
                     GET_MATRIX_ADDR(c, x, y) =  \
                                                 GET_MATRIX_ADDR(c, x, y) +\
                                                 GET_MATRIX_ADDR(a, x, i) *\
@@ -132,8 +191,8 @@
 
 #define PRINT_MATRIX(a, format) {\
         int x, y;\
-        for(x = 0; x < a->_row; ++x){\
-            for(y = 0; y < a->_col -1 ; ++y){\
+        for(x = 0; x < (a)->row; ++x){\
+            for(y = 0; y < (a)->col -1 ; ++y){\
                 printf(format ", ", GET_MATRIX_VAL(a, x, y));\
             }\
             printf(format "\n", GET_MATRIX_VAL(a, x, y));\
@@ -141,7 +200,7 @@
     }
 
 #define FREE_MATRIX(mat) \
-    free(mat->_data); \
+    free(mat->data); \
     free(mat)
 
 #endif

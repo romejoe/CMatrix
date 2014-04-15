@@ -2,12 +2,12 @@
 #include "Matrix.h"
 
 struct matrix{
-	double *_data;
-	int _row, _col;
+	int *data;
+	int row, col;
 };
 
 int main(){
-	struct matrix *a;
+	/*struct matrix *a;
 	int fileSize;
 	char *buff;
 	FILE *f = fopen("demo.mat", "r");
@@ -25,6 +25,12 @@ int main(){
 	printf("colSize = %d\n", a->_row);
 	printf("a = \n");
 	PRINT_MATRIX(a, "%lf");
+*/
+	FILE *f = fopen("demo.mat", "r");
+	struct matrix *a;
+	a = malloc(sizeof(struct matrix));
+	READ_MATRIX_FILE(f, a, int, 0, " %d ", ",", ";");
+	PRINT_MATRIX(a, "%d");
 
 	return 0;
 }
