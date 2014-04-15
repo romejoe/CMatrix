@@ -11,6 +11,7 @@
 
 #define READ_MATRIX_FILE(f, mat, type, blank, format, delimiter, linesep){\
     int rowSize = -1, curRowSize = 0, i = 0, rowCount = 0;\
+    char error = 0;\
     int size = __DEFAULT_SIZE;\
     type *buf = malloc(size * sizeof(type));\
     type tmp;\
@@ -21,7 +22,6 @@
             buf = realloc(buf, size * sizeof(type));\
         }\
         if(fscanf(f, format, &tmp) != 1) break;\
-        printf(format "\n", tmp);\
         buf[i] = tmp;\
         ++i;\
         ++curRowSize;\
@@ -31,10 +31,14 @@
             }\
             else{\
                 if(rowSize == -1){\
-                    if(curRowSize == 0) goto READERRORA;\
+                    if(curRowSize == 0){\
+error = 1; break;\
+}\
                     rowSize = curRowSize;\
                 }\
-                else if(rowSize < curRowSize) goto READERROR;\
+                else if(rowSize < curRowSize){\
+error = 1; break;\
+}\
                 else while(curRowSize < rowSize){\
                     if( i >= size){\
                         size <<= 1;\
@@ -50,20 +54,17 @@
             }\
         }\
         else{\
+            error = 1;\
             break;\
-            goto READERROR;\
         }\
     }\
 \
+    if(error){\
+        printf("Error Reading Matrix\n"); exit(-1);\
+    }\
     (mat)->data = buf;\
     (mat)->row = rowCount;\
     (mat)->col = rowSize;\
-    goto DONE;\
-    READERRORA:\
-    READERROR:\
-    printf("Error Reading Matrix\n"); exit(-1);\
-    DONE:\
-    i = 0;\
 }
 
 
